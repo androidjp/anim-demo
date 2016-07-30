@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:ordering="together"
-    ><!--sequentially-->
-
+    ><!--together|sequentially : 同时一起执行|动画按顺序执行-->
+    <!--
+    <set> 对应：AnimatorSet
+    <objectAnimator> 对应：ObjectAnimator
+    <animator> 对应：ValueAnimtoer
+    propertyName 属性名
+    duration 持续时间
+    valueFrom 初始值
+    valueFrom 末尾值
+    startOffset 开始动画前的延时
+    repeatCount 属性动画重复次数
+    repeatMode 属性动画重复形式
+    valueType 属性值类型（float | int）
+    -->
     <objectAnimator
         android:propertyName="string"
         android:duration="1000"
         android:valueFrom="@android:color/white"
         android:valueTo="@android:color/holo_green_dark"
-        android:startOffset="10"
+        android:startOffset="500"
         android:repeatCount="1"
         android:repeatMode="restart"
         android:valueType="intType"/>
-
     <animator
         android:duration="1000"
         android:valueFrom="@android:color/white"
@@ -21,7 +32,4 @@
         android:repeatCount="1"
         android:repeatMode="restart"
         android:valueType="intType"/>
-
-
-
 </set>

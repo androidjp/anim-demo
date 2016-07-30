@@ -8,6 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Toast;
 
 import com.androidjp.anim_demo.R;
 
@@ -29,6 +30,13 @@ public class ViewAnimFragment extends BaseDialogFragment implements Animation.An
     public void onResume() {
         super.onResume();
 //        animation = AnimationUtils.loadAnimation(getActivity(),R.anim.view_anim);
+
+        getImageView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"你点击了我",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         animation = new RotateAnimation(0, +720, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(3000);

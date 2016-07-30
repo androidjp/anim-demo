@@ -7,24 +7,20 @@
     android:repeatMode="restart"
     android:duration="1000"
     >
-
     <translate
         android:fromYDelta="-600"
         android:toYDelta="0"
         android:startOffset="500"
         />
-
+    /<!--50%来指定轴心为view的中心-->
     <rotate
         android:fromDegrees="-90"
         android:toDegrees="0"
-        android:pivotY="0.5"
-        android:pivotX="0.5"
+        android:pivotY="50%"
+        android:pivotX="50%"
         />
-
     <alpha
         android:fromAlpha="0.5"
         android:toAlpha="1"
         />
-
-
 </set>

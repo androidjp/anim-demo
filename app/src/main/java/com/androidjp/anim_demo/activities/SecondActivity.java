@@ -30,10 +30,12 @@ public class SecondActivity extends AppCompatActivity{
      * 使用动画效果加载Fragment（注意，这种方式对于DialogFragment是无效的，因为DialogFragment没有对应的父容器，本身就是固定的）
      */
     private void addFragment() {
-
         Fragment fragment = new TestFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.fragment_enter_anim,R.anim.fragment_exit_anim);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+//        transaction.setCustomAnimations(R.anim.fragment_enter_anim,R.anim.fragment_exit_anim);
         transaction.add(R.id.frame_root,fragment);
 //        transaction.addToBackStack("frag");
         transaction.commit();
