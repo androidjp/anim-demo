@@ -10,7 +10,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 
 import com.androidjp.anim_demo.R;
-import com.androidjp.anim_demo.fragment.BaseDialogFragment;
 
 /**
  * Created by androidjp on 16-7-29.
@@ -49,7 +48,6 @@ public class ViewAnimFragment extends BaseDialogFragment implements Animation.An
     @Override
     public void onAnimationStart(Animation animation) {
     }
-
     @Override
     public void onAnimationEnd(Animation animation) {
 
@@ -61,8 +59,7 @@ public class ViewAnimFragment extends BaseDialogFragment implements Animation.An
                 animation.setInterpolator(getActivity(),android.R.anim.accelerate_decelerate_interpolator);
                 /**
                  * 这里，注意点：
-                 * 1.setFillEnabled 表示的是：是否让画面停留在最后一刻的状态
-                 * 2.setFillBefored 在TranslateAnimation时，默认为true，相当于，在动画开始前的位置，已经被记录了下来，然后，你就可以实现把translate的最终位置先设置给View，然后开始跑动画
+                 * 1.setFillAfter 表示的是：是否让画面停留在最后一刻的状态
                  */
                 animation.setFillAfter(true);
                 animation.setAnimationListener(this);

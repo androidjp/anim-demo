@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -18,7 +19,7 @@ import android.widget.LinearLayout;
 
 import com.androidjp.anim_demo.activities.SecondActivity;
 import com.androidjp.anim_demo.fragment.CustomViewAnimFragment;
-import com.androidjp.anim_demo.fragment.FrameAnimFragment;
+import com.androidjp.anim_demo.fragment.TweenAnimFragment;
 import com.androidjp.anim_demo.fragment.PropertyAnimFragment;
 import com.androidjp.anim_demo.fragment.ViewAnimFragment;
 
@@ -137,7 +138,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch ((Integer)(view.getTag())){
             case 1:
-                new ViewAnimFragment().show(getSupportFragmentManager(),"ViewAnimFragment");
+                ViewAnimFragment fragment = new ViewAnimFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+//                transaction.setCustomAnimations(R.anim.property_anim,R.anim.property_anim);
+                transaction.add(fragment,"ViewAnimFragment");
+                transaction.commit();
+
+//                new ViewAnimFragment().show(getSupportFragmentManager(),"ViewAnimFragment");
                 break;
             case 2:
                 new CustomViewAnimFragment().show(getSupportFragmentManager(),"CustomViewAnimFragment");
@@ -146,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new PropertyAnimFragment().show(getSupportFragmentManager(),"PropertyAnimFragment");
                 break;
             case 4:
-                new FrameAnimFragment().show(getSupportFragmentManager(),"FrameAnimFragment");
+                new TweenAnimFragment().show(getSupportFragmentManager(),"TweenAnimFragment");
                 break;
             case 6:
                 startActivity(new Intent(this, SecondActivity.class));

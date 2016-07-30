@@ -16,11 +16,9 @@
         <!--android:pivotY="0.5"-->
         <!--android:toDegrees="360"-->
         <!--/>-->
-
     <alpha
         android:fromAlpha="0.0"
         android:toAlpha="1.0" />
-
     <!--<scale-->
         <!--android:fromXScale="0.5"-->
         <!--android:fromYScale="0.5"-->
@@ -28,5 +26,4 @@
         <!--android:pivotY="0.5"-->
         <!--android:toXScale="2"-->
         <!--android:toYScale="2" />-->
-
 </set>

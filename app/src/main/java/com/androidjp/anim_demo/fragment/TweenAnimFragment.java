@@ -7,7 +7,7 @@ import com.androidjp.anim_demo.R;
 /**
  * Created by androidjp on 16-7-29.
  */
-public class FrameAnimFragment extends BaseDialogFragment{
+public class TweenAnimFragment extends BaseDialogFragment{
 
     @Override
     public void onResume() {
